@@ -9,7 +9,7 @@ class App extends Component {
     users: ['Patiwi', 'Geri', 'Jaime', 'Vicho', 'Belén'],
     items: ['A', 'B', 'C', 'D'],
     min: 0,
-    max: 10,
+    max: 5,
     step: 1,
   }
 
@@ -20,7 +20,6 @@ class App extends Component {
       items: props.items,
       matrix: math.zeros(props.users.length, props.items.length),
     };
-    // console.log(this.state.matrix.toString());
   }
 
   onRatingChange = (e, pos) => {
@@ -41,8 +40,6 @@ class App extends Component {
       const u_i = matrix.get([u, i]);
       return total + (u_j - u_i);
     }, 0);
-
-    // console.log({ sum, count, avg: sum / count });
 
     return { sum, count, avg: sum / count };
   }
@@ -92,8 +89,11 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container">
-          <h1>Slope One</h1>
-          <table className="table table-striped">
+          <h1>Weighted Slope One</h1>
+
+          <hr />
+
+          <table className="table table-striped table-hover table-bordered">
             <thead>
               <tr>
                 <td key="#">#</td>
@@ -112,8 +112,9 @@ class App extends Component {
                     const predict = this.p(u, j);
                     return (
                       <td key={item}>
-                        <input {...input} value={matrix.get([u, j])} onChange={event => this.onRatingChange(event, [u, j])} />
-                        <span>{predict ? predict.toFixed(2) : null}</span>
+                        Rate: <input {...input} value={matrix.get([u, j])} onChange={event => this.onRatingChange(event, [u, j])} />
+                        <br />
+                        <small>Prediction: <strong>{predict ? predict.toFixed(2) : '?'}</strong></small>
                       </td>
                     );
                   })}
@@ -121,6 +122,9 @@ class App extends Component {
               ))}
             </tbody>
           </table>
+          <p>
+            <em>Note: <strong>0</strong> is interpreted as 'no rating'.</em>
+          </p>
         </div>
       </div>
     );
