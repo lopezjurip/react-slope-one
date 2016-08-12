@@ -32,5 +32,6 @@ npm start
 ## TODO
 
 * [ ] Document code
+* [ ] Improve performance caching some values
 * [ ] Write tests
 * [ ] Write explanation using LaTeX-like tools
