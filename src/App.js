@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import math from 'mathjs';
 import transform from 'lodash/transform';
 
-import './App.css';
-
 class App extends Component {
   static defaultProps = {
     users: ['Patiwi', 'Geri', 'Jaime', 'Vicho', 'Belén'],
@@ -90,7 +88,14 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <h1>Weighted Slope One</h1>
-
+          <p className="lead">
+            Based on:
+          </p>
+          <p>
+            <em>Lemire, D., & Maclachlan, A. (2005, April). Slope One Predictors for Online Rating-Based Collaborative Filtering. In SDM (Vol. 5, pp. 1-5).</em>
+            <br />
+            Available at: <a href="http://lemire.me/fr/documents/publications/lemiremaclachlan_sdm05.pdf">http://lemire.me/fr/documents/publications/lemiremaclachlan_sdm05.pdf</a>
+          </p>
           <hr />
 
           <table className="table table-striped table-hover table-bordered">
