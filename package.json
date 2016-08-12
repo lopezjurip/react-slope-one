@@ -2,6 +2,7 @@
   "name": "react-slope-one",
   "version": "0.0.1",
   "private": true,
+  "homepage": "https://mrpatiwi.github.io/react-slope-one",
   "devDependencies": {
     "react-scripts": "0.2.1"
   },
